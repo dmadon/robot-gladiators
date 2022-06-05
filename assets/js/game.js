@@ -10,8 +10,8 @@ var enemyAttack=12;
 
 
 var fight=function(enemyName){
-    // Alert players that they are strating the round
-    window.alert("Welcome to Robot Gladiators!");
+// Repeat and execute as long as the enemy robot is alove
+while(enemyHealth>0){
 
     // Prompt players to decide to fight or skip the round
     var promptFight=window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
@@ -73,7 +73,11 @@ var fight=function(enemyName){
         window.alert("You need to choose a valid option. Try again!")
     }
 }
+}
 
 for(var i = 0; i < enemyNames.length; i++) {
-    fight(enemyNames[i]);
+    // call fight function with enemy robot
+    var pickedEnemyName=enemyNames[i];
+    enemyHealth=50;
+    fight(pickedEnemyName);
 }
